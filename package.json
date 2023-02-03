@@ -1,6 +1,6 @@
 {
   "name": "@rutynka/helper-bar-board-sse",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "author": "ru7ynk4",
   "description": "A simple Svelte app - sticky bar with SSE layer",
   "typings": "bbsse.d.ts",
