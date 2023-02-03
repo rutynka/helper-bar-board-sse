@@ -1,3 +1,4 @@
+# Bar Board with Server-Sent Events
 
 <h1 align="center">
     <a href="https://rutynka.io">
@@ -6,7 +7,6 @@
 	<br>
 </h1>
 
-# Bar Board with Server-Sent Events
 
 A Svelte sticky bar board with Server-Sent Events for [Rutynka](https://rutynka.io) apps. 
 
@@ -47,16 +47,17 @@ node scripts/setupTypeScript.js
 
 yarn install
 yarn add @rutynka/helper-bar-board-sse
+go run node_modules/@rutynka/helper-bar-board-sse/server.go
 yarn dev
 http://localhost:8080/
 ```
 
 ```js
 <script>
-	import BarManager from '@rutynka/helper-bar-board-sse'
+	import {bbsse} from '@rutynka/helper-bar-board-sse'
 	export let name;
 
-	let bb;
+	let bbsse;
 	function handleClick() {
 		let id = bb.init({settings:{text:'init 🌭 + 🌭 =',color:80,}})
 		bb.set({text:'🌭🌭',color:110,},id)
@@ -65,7 +66,6 @@ http://localhost:8080/
 </script>
 
 <main>
-	<BarManager bind:this={bb}/>
 	<h1>Hello {name}!</h1>
 	<p>Visit the <a href="https://svelte.dev/tutorial">Svelte tutorial</a> to learn how to build Svelte apps.</p>
 	<button on:click={handleClick}>Show bar</button>
