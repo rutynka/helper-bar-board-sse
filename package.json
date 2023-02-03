@@ -1,7 +1,27 @@
 {
   "name": "@rutynka/helper-bar-board-sse",
   "version": "0.1.0",
-  "private": true,
+  "author": "ru7ynk4",
+  "description": "A simple Svelte app - sticky bar with SSE layer",
+  "svelte": "src/index.js",
+  "module": "dist/bbsse.mjs",
+  "main": "dist/index.js",
+  "unpkg": "dist/bbsse.js",
+  "type": "module",
+  "files": [
+    "src/index.js",
+    "src/bbsse.svelte",
+    "src/chat.svelte",
+    "server.go"
+  ],
+  "keywords": [
+    "svelte",
+    "bar",
+    "sticky",
+    "sse",
+    "helper",
+    "rutynka"
+  ],
   "scripts": {
     "build": "rollup -c",
     "dev": "rollup -c -w",
@@ -27,5 +47,12 @@
   "dependencies": {
     "@rutynka/helper-bar-board": "^0.2.8",
     "sirv-cli": "^2.0.0"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/rutynka/helper-bar-board-sse"
+  },
+  "homepage": "https://github.com/rutynka/helper-bar-board-sse",
+  "url": "https://rutynka.io",
+  "license": "MIT"
 }

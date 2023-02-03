@@ -6,9 +6,9 @@
 	<br>
 </h1>
 
-# Bar Board with Server-Sent Events  
+# Bar Board with Server-Sent Events
 
-A Svelte sticky bar board helper with Server-Sent Events for [Rutynka](https://rutynka.io) apps. 
+A Svelte sticky bar board with Server-Sent Events for [Rutynka](https://rutynka.io) apps. 
 
 
 ## Get started
@@ -43,8 +43,10 @@ If you're using [Visual Studio Code](https://code.visualstudio.com/) we recommen
 ```bash
 npx degit sveltejs/template my-svelte-project
 cd my-svelte-project
+node scripts/setupTypeScript.js
+
 yarn install
-yarn add @rutynka/helper-bar-board@^0.2.8
+yarn add @rutynka/helper-bar-board-sse
 yarn dev
 http://localhost:8080/
 ```
