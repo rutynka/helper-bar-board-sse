@@ -1,7 +1,7 @@
 import {Config, configure, defaultConfig } from './config.js'
 import {sseServerConnect, setUserNameFromAPI, brodcastEvents} from './connections.js'
 import { userEvents, attachCustomEvents } from './sseEvents.js';
-import type {actionEvent} from './connections'
+import type {actionEvent} from './connections.js'
 
 export interface Api {
     set(config: Config|undefined): void;

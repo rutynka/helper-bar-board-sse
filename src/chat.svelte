@@ -1,5 +1,5 @@
 <script lang="ts">
-import {handleMessageFormSubmit, handleEnterMessageFormSubmit} from './connections'
+import {handleMessageFormSubmit, handleEnterMessageFormSubmit} from './connections.js'
 
 export let c:any;
 export let msgDB:any;

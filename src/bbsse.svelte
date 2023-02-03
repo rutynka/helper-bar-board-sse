@@ -3,7 +3,7 @@ import BarManager from '@rutynka/helper-bar-board'
 import {Api, start} from './api.js'
 import Chat from './chat.svelte'
 // import { onMount } from 'svelte';
-import type {Config} from './config'
+import type {Config} from './config.js'
 
 
 let bb:any
