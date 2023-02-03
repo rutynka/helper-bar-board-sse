@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset='utf-8'>
+	<meta name='viewport' content='width=device-width,initial-scale=1'>
+
+	<title>Svelte app</title>
+
+	<link rel='icon' type='image/png' href='/favicon.png'>
+	<link rel='stylesheet' href='/global.css'>
+	<link rel='stylesheet' href='/build/bbsse.css'>
+	<meta http-equiv="Access-Control-Allow-Origin" content="null" />
+	<script defer src='/build/bbsse.js'></script>
+</head>
+
+<body>
+	<style>
+		.msg-click {
+			color:red;
+			font-size: 12px;
+		}
+		.hide {
+			display: none;
+		}
+	</style>
+	<script>
+		let whoAmI = ''
+		let networkClickEvent = (e) => {
+			console.log('callback fired' ,e.data)
+			if (JSON.parse(e.data).user === whoAmI) {
+				console.log('Skip my own actions - because I am:' + whoAmI)
+				return false
+			}
+			document.getElementById('count').innerHTML = 1 + parseInt(document.getElementById('count').innerHTML)
+		}
+		document.addEventListener("DOMContentLoaded", function(event) {
+			const config = {
+				sseKey:'1000000000000000a',
+				salt:'salt' + Math.floor(Math.random() * 1000),
+				user:'Anonymous' + Math.floor(Math.random() * 1000),
+				sseServerURL:'http://localhost:4004/v2/multi/events/',
+				chatPOSTURL:'http://localhost:4004/v2/multi/msg',
+				actionGETURL:'http://localhost:4004/v2/multi/actions',
+				msgDB: [],
+				avatar: 'https://cdn.rutynka.io/img/avatar/martinez.svg',
+				customSSEEvents:[{'network_click': networkClickEvent}]
+			}
+			const svelte = new bbsse({target:document.body,props:{}}) 
+			app = svelte.BarBoardSSE(config)
+			whoAmI = app.getUser()
+			document.getElementById('btn').addEventListener('click',()=> {
+				app.brodcastAction({event:'network_click',value:'click button through sse event' + whoAmI,master: true})
+				document.getElementById('msg').classList.toggle('hide')
+				setTimeout(()=>{
+					document.getElementById('msg').classList.toggle('hide')
+				},8000)
+			})
+	});
+	</script>
+	<button type="button" id="btn">Only network clicks counts</button>
+	<span id="count">0</span>
+	<p class="msg-click hide" id="msg">Only network clicks counts!</p>
+</body>
+</html>
