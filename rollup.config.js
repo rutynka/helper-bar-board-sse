@@ -32,12 +32,18 @@ function serve() {
 
 export default {
 	input: 'src/main.ts',
-	output: {
+	output: [{
 		sourcemap: true,
 		format: 'iife',
 		name: 'bbsse',
 		file: 'public/build/bbsse.js'
 	},
+	{
+		file: 'public/build/bbsse.mjs',
+		format: 'es',
+		sourcemap: true
+	  },
+	],
 	plugins: [
 		svelte({
 			preprocess: sveltePreprocess({ sourceMap: !production }),

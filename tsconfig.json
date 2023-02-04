@@ -4,6 +4,9 @@
   "include": ["src/**/*"],
   "exclude": ["node_modules/*", "__sapper__/*", "public/*"],
   "compilerOptions": {
+    "allowJs": true,
+		"checkJs": true,
+		"esModuleInterop": true,
     "noEmitOnError": false,
     "strict": true,
     "noUnusedLocals": true,
@@ -13,7 +16,13 @@
     "module": "esnext",
     "importHelpers": true,
     "moduleResolution": "node",
-    "target": "ES2017",
-    "lib": ["dom", "es6", "ES2017" ,"dom.iterable"]
+    "target": "ES2020",
+    "rootDir": "src",
+    "incremental": true,
+    "outDir": "build/main",
+    "paths": {
+      "@rutynka/helper-bar-board-sse": ["./src/main"]
+    },
+    "lib": ["dom", "es6", "ES2020" ,"dom.iterable"]
   }
 }
