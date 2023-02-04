@@ -1,7 +1,6 @@
 // type ChatOpen = "open" | "hidden";
 // interface chatCallBack { (msg:{color:number, user:string,text:string}): void }
-import type { actionEvent } from "./connections";
-type chatCallBack = (msg:{color:number, user:string,text:string}[]) => void;
+// import type { actionEvent } from "./connections";
 
 export interface Config {
     /** all app options */

@@ -1,5 +1,4 @@
 import type { Config } from './config.js'
-export type actionEvent = {event: string, value: string, master?: boolean}
 
 export const sseServerConnect = async (state: Config) => {
     if (state.sseServerURL) {

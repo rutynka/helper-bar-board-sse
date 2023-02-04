@@ -1,6 +1,5 @@
 import type { Config } from './config'
 
-
 export async function userEvents(state: Config): Promise<void> {
     // const sse = sseServerConnect(state)
     console.log('atach user events',state.sseConnection)
