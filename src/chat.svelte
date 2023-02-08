@@ -29,6 +29,9 @@ export let msgDB:any;
 </sse-chat>
 
 <style>
+    textarea {
+        width: 25vw;
+    }
     .chat {
         position: fixed;
         top:30vh;
@@ -56,7 +59,7 @@ export let msgDB:any;
         font-size:24px
     }
 
-	@media only screen and (min-width : 320px) and (max-width: 768px) {
+	@media only screen and (max-width: 768px) {
         .open {width:100%}
 	}
 </style>

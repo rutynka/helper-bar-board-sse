@@ -1,10 +1,10 @@
 <script lang="ts">
 import BarManager from '@rutynka/helper-bar-board'
-import {Api, start} from './api.js'
+import {start} from './api.js'
 import Chat from './chat.svelte'
 // import { onMount } from 'svelte';
 import type {Config} from './config.js'
-
+import type {Api} from './api'
 
 let bb:any
 let appState: Config

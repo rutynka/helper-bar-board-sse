@@ -1,4 +1,5 @@
-import {Config, configure, defaultConfig } from './config.js'
+import type { Config } from './config.js';
+import {configure, defaultConfig } from './config.js'
 import {sseServerConnect, setUserNameFromAPI, brodcastEvents} from './connections.js'
 import { userEvents, attachCustomEvents } from './sseEvents.js';
 

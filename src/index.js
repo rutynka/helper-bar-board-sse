@@ -1,1 +1,1 @@
-export { default } from './bbsse.svelte'
+export { default as bbsse } from './bbsse.svelte'
